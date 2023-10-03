@@ -1,4 +1,12 @@
+import { useCallback } from 'react'
+import { store, runningAtom } from '@/store'
+
 export function Toolbar() {
+  const onRun = useCallback(() => {
+    if (store.get(runningAtom)) return;
+    store.set(runningAtom, true)
+  }, [])
+
   return (
     <div
       className='
@@ -15,7 +23,7 @@ export function Toolbar() {
         text-dark-secondary
       '>
       <div>JavaScript</div>
-      <div className='cursor-pointer hover:text-white transition-duration'>Run</div>
+      <div className='cursor-pointer  hover:text-white transition-duration' onClick={onRun}>Run</div>
     </div>
   )  
 }
