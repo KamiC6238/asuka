@@ -4,3 +4,7 @@ html, body, #root {
   padding: 0;
   margin: 0;
 }
+
+#root {
+  position: relative;
+}
