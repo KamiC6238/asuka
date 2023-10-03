@@ -10,8 +10,8 @@ export function Toolbar() {
         rounded-1
         box-border
         rounded-b-0
-        flex-center-between 
         bg-dark-primary
+        flex-center-between 
         text-dark-secondary
       '>
       <div>JavaScript</div>

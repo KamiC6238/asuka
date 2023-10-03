@@ -9,7 +9,6 @@ export function Editor() {
   useEffect(() => {
     if (!editorRef.current && editorWrapperRef.current) {
       editorRef.current = createEditor(editorWrapperRef.current);
-      console.log("create monaco editor");
     }
   }, []);
 
