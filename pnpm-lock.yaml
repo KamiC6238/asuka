@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@webcontainer/api':
+    specifier: ^1.1.7
+    version: 1.1.7
   jotai:
     specifier: ^2.4.3
     version: 2.4.3(@types/react@18.2.22)(react@18.2.0)
@@ -1138,6 +1141,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@webcontainer/api@1.1.7:
+    resolution: {integrity: sha512-wUQRj0v4JV35xhyI45lbesy9B+u9OQYFmrf5Xx0EKyXiRL0q8X6m4sEQxxElKwDXS49wvnHSJtQAlMEoT24HLQ==}
+    dev: false
 
   /acorn-jsx@5.3.2(acorn@8.10.0):
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}

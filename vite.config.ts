@@ -8,9 +8,13 @@ export default defineConfig({
   plugins: [UnoCSS(), react()],
   server: {
     hmr: true,
-    proxy: {
-      '/file': 'http://localhost:3000/'
-    }
+    // proxy: {
+    //   '/file': 'http://localhost:3000/'
+    // },
+    headers: {
+      'Cross-Origin-Embedder-Policy': 'require-corp',
+      'Cross-Origin-Opener-Policy': 'same-origin',
+    },
   },
   optimizeDeps: {
     // 解决请求 ts-worker 504 Outdated Optimize Dep 的问题
