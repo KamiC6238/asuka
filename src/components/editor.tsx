@@ -1,33 +1,31 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, FC } from 'react';
 import { createEditor } from "tiny-monaco";
 import type { MonacoEditor } from "tiny-monaco";
-import { store, runningAtom } from '@/store'
+import { useAtom, runningAtom } from '@/atoms'
 
-type SubRef = () => void
-
-export function Editor() {
+export const Editor: FC<{}> = () => {
   const editorWrapperRef = useRef(null);
   const editorRef = useRef<MonacoEditor | null>(null);
-  const subRef = useRef<SubRef | null>(null);
+
+  const [isRunning, setIsRunning] = useAtom(runningAtom)
 
   useEffect(() => {
     if (!editorRef.current && editorWrapperRef.current) {
       editorRef.current = createEditor(editorWrapperRef.current);
     }
+  }, []);
 
-    subRef.current?.()
-    subRef.current = store.sub(runningAtom, () => {
-      if (store.get(runningAtom)) {
+  useEffect(() => {
+    if (isRunning) {
         // TODO execute run API to backend,
-        // TODO execute store.set(runningAtom, false) when response come back
+        // TODO setIsRunning(false) when response come back
         console.log('running')
         setTimeout(() => {
-          store.set(runningAtom, false)
+          setIsRunning(false)
           console.log('response come back')
         }, 1000)
-      }
-    })
-  }, []);
+    }
+  }, [isRunning])
 
   return <div ref={editorWrapperRef} className='w-full h-[calc(100%-2.25rem)]'></div>
 }

@@ -7,6 +7,7 @@ import path from 'path'
 export default defineConfig({
   plugins: [UnoCSS(), react()],
   server: {
+    hmr: true,
     proxy: {
       '/file': 'http://localhost:3000/'
     }

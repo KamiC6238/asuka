@@ -5,6 +5,9 @@ export default defineConfig({
     colors: {
       'dark-primary': '#303030',
       'dark-secondary': '#FFFFFF99',
+      'dark-tertiary': '#fff9',
+
+      'dark-btn-hover': '#ffffff1a',
     }
   },
   rules: [
@@ -12,6 +15,8 @@ export default defineConfig({
     [/^p-(\d+)$/, match => ({ padding: `${(Number(match[1])) / 4}rem` })],
     [/^h-(\d+)$/, match => ({ height: `${(Number(match[1])) / 4}rem` })],
     [/^w-(\d+)$/, match => ({ width: `${(Number(match[1])) / 4}rem` })],
+
+    ['text-sm', { 'font-size': '0.75rem' }],
 
     ['flex-center', {
       'display': 'flex',

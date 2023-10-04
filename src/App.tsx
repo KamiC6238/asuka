@@ -1,5 +1,5 @@
 import "@/App.css";
-import { Toolbar, Editor } from '@/widgets';
+import { Toolbar, Editor } from '@/components';
 
 function App() {
   return (

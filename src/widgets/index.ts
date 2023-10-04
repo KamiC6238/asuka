@@ -1,2 +1,1 @@
-export * from './toolbar'
-export * from './editor'
+export * from './button'
