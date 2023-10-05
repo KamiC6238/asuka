@@ -7,6 +7,7 @@ export default defineConfig({
       'dark-secondary': '#FFFFFF99',
       'dark-tertiary': '#fff9',
 
+      'dark-input': '#1e1e1e',
       'dark-btn-hover': '#ffffff1a',
     }
   },
