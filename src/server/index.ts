@@ -24,11 +24,8 @@ async function startDevServer() {
 
   webContainerInstance.on('server-ready', (_, url) => {
     console.log(`Server running at ${url}`)
+    window.__WEB_CONTAINER_SERVER_STARTED__ = true
   })
-}
-
-export function getWebContainerInstance() {
-  return webContainerInstance
 }
 
 export async function bootWebContainer() {
@@ -46,6 +43,7 @@ export async function bootWebContainer() {
     }
 
     startDevServer()
+    window.__WEB_CONTAINER_INSTANCE__ = webContainerInstance
   })
 }
 
