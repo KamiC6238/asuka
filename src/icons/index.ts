@@ -1,0 +1,1 @@
+export { default as plusSvg } from './plus.svg'

@@ -22,8 +22,8 @@ async function startDevServer() {
 
   webContainerInstance.spawn('npm', ['run', 'start'])
 
-  webContainerInstance.on('server-ready', (port, url) => {
-    console.log(`Server running at ${url}:${port}`)
+  webContainerInstance.on('server-ready', (_, url) => {
+    console.log(`Server running at ${url}`)
   })
 }
 
